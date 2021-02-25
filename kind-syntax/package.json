@@ -2,14 +2,13 @@
 	"name": "kind",
 	"displayName": "Kind Language",
 	"description": "Syntax highlighting for the Kind language",
-	"version": "0.1.2",
+	"version": "0.1.3",
 	"publisher": "MaisaMilena",
 	"author": {
 		"name": "Maisa Milena"
 	},
 	"license": "SEE LICENSE",
 	"keywords": [
-		"formality",
 		"kind"
 	],
 	"icon": "images/kind-image.png",
