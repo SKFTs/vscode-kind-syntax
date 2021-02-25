@@ -1,0 +1,265 @@
+
+name                   = kind
+file_extensions []     = kind;
+
+
+################################################################
+## Styles
+################################################################
+
+styles [] {
+
+.comment.line : style {
+   color                 = light_green
+   italic                = true
+   textmate_scope        = comment.line.double-slash
+   pygments_scope        = Comment.Single
+}
+
+.keyword : style {
+   color     = cyan
+   textmate_scope        = keyword
+   pygments_scope        = Keyword
+}
+
+.keyword.operator.logical: style {
+   color     = cyan
+   textmate_scope        = keyword.operator.logical
+   pygments_scope        = Keyword
+}
+
+.punctuation : style {
+   color     = red_2
+   textmate_scope        = punctuation
+   pygments_scope        = Punctuation
+}
+
+.punctuation.definition.variable : style {
+   color     = yellow
+   textmate_scope        = punctuation.definition.variable
+   pygments_scope        = Punctuation
+}
+
+.text : style {
+   color                 = yellow
+   ace_scope             = text
+   textmate_scope        = text
+   pygments_scope        = String
+}
+
+.storage.type : style {
+   color                 = purple
+   textmate_scope        = storage.type
+   pygments_scope        = String
+}
+
+.variable.language :  style {
+   textmate_scope        = variable.language
+   pygments_scope        = Keyword
+}
+
+.keyword.conditional :  style {
+   color  = pink
+   textmate_scope        = keyword.conditional
+   pygments_scope        = Keyword
+}
+
+.keyword.operator.arithmetic :  style {
+   color  = pink
+   textmate_scope        = keyword.operator.arithmetic
+   pygments_scope        = Keyword
+}
+
+.keyword.control.auxiliar : style {
+   color  = purple
+   textmate_scope        = keyword.control.auxiliar
+   pygments_scope        = Keyword
+}
+
+.keyword.other : style {
+   color  = orange
+   textmate_scope        = keyword.other
+   pygments_scope        = Keyword
+}
+
+
+.variable.other : style {
+   color  = yellow
+   textmate_scope        = variable.other
+   pygments_scope        = String
+}
+
+.string : style {
+   color = green
+   textmate_scope = string
+    pygments_scope = String
+}
+
+.punctuation.definition.comment : style {
+   color = green
+   textmate_scope = punctuation.definition.comment
+   pygments_scope = Keyword
+} 
+
+.punctuation.definition.generic : style {
+   color = green
+   textmate_scope = punctuation.definition.generic
+   pygments_scope = Keyword
+}
+
+.meta.function : style {
+   color = cyan
+   textmate_scope = meta.function
+   pygments_scope = Keyword
+}
+
+
+
+.constant.numeric.integer.decimal : style {
+   color = gold
+   textmate_scope = constant.numeric.integer.decimal
+   pygments_scope = Number
+} 
+
+.constant.numeric.integer.hexadecimal : style {
+   color = gold
+   textmate_scope = constant.numeric.integer.hexadecimal
+   pygments_scope = Number
+} 
+
+.constant.numeric.integer.octal : style {
+   color = gold
+   textmate_scope = constant.numeric.integer.octal
+   pygments_scope = Number
+} 
+
+.constant.numeric.integer.binary : style {
+   color = gold
+   textmate_scope = constant.numeric.integer.binary
+   pygments_scope = Number
+} 
+
+.constant.numeric.float : style {
+   color = gold
+   textmate_scope = constant.numeric.float
+   pygments_scope = Number
+} 
+
+.constant.language : style {
+   color = gold
+   textmate_scope = constant.language
+   pygments_scope = Keyword
+}
+
+
+}
+
+#################################################
+## Parse contexts
+#################################################
+
+contexts [] {
+
+##############################################
+## Main Context - Entry point context
+##############################################
+
+main : context {
+
+   : include "keyword";
+   : include "punctuations";
+   : include "numeric";
+   
+   
+   : pattern { 
+      regex  \= (\blet\s|\bdup\s|\bcpy\s|\bget\s)
+      styles []   = .storage.type;
+   }
+   
+   : inline_push {
+      regex          \= (\")
+      styles []       = .string;
+      default_style   = .string
+      : pop {
+         regex       \= (\")
+         styles []    = .string;
+      }
+   }
+   
+   : pattern {
+      regex          \= ((\s*|\t*)//.*)
+      styles []       = .comment.line;
+   }
+   
+}
+
+keyword : context {
+   
+   : pattern {
+      regex \= (\btype\s|\blet\b|\bdef\b)
+      styles []  = .keyword.other;
+   }
+   
+   : pattern {
+      regex \= (\bopen\b)
+      styles []  = .keyword.control.auxiliar;
+   }
+   
+   : pattern {
+      regex \= (\bif\s|\bthen\b|\belse\b|\bcase\b|for\s|\sin\s|\with\s)
+      styles [] = .keyword.conditional;
+   }
+
+}
+
+punctuations : context {
+   : pattern {
+      regex     \= (#|~|!|\$|\?|\+|%|&|\*)
+      styles []  = .punctuation.definition.variable;
+   }
+   
+   : pattern {
+      regex      \= (=|:|=[>]|=>|\s->\s|~[>]|,|<|>|;)
+      styles []   = .punctuation;
+   }
+   
+   : pattern {
+      regex      \= (\[|\]|\{|\}|\(|\)|\|)
+      styles []   = .punctuation;
+   }
+   
+}
+
+numeric : context {
+   
+   : pattern {
+      regex     \= (\b[01]+\b)
+      styles []  = .constant.numeric.integer.binary;
+   }
+   
+   : pattern {
+      regex     \= (^0[0-7]+$)
+      styles []  = .constant.numeric.integer.octal;
+   }
+   
+   : pattern {
+      regex     \= (^[\d.]+$)
+      styles []  = .constant.numeric.integer.decimal;
+   }
+   
+   : pattern {
+      regex     \= (0[a-z\x{007c}A-Z][0-9a-fA-F]+)
+      styles []  = .constant.numeric.integer.hexadecimal;
+   }
+   
+   : pattern {
+      regex     \= (\b[\x{002b}-]?([0-9]*[.])?[0-9]+)
+      styles []  = .constant.numeric.float;
+   }
+}
+
+#################################################
+## End of Contexts
+#################################################
+
+}

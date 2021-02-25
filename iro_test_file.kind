@@ -1,0 +1,51 @@
+// A Mons sprite
+type Mons.Sprite {
+  new(x: U32, y: U32, z: U32, img: Image3D)
+}
+
+// A direction
+type Mons.Dir {
+  right,
+  up,
+  left,
+  down
+}
+
+Mons.Object.set_bos(bos: List(Mons.Object), obj: Mons.Object): Mons.Object
+  open obj 
+  Mons.Object.new(obj.kin, obj.dir, obj.pad, obj.ani, obj.dmg, obj.bag, 
+    obj.mon, bos, obj.cap, obj.idl, obj.eff)
+    
+    
+Mons.Map.get_hero(pos: Pos32, map: Mons.Map): Pair(Mons.Object, U32)
+  let tile = Mons.Map.get_list(pos, map)
+  let obj_is_hero = ((obj) Mons.Kind.is_hero(Mons.Object.get_kin(obj))) :: Mons.Object -> Bool 
+  let fun = ((obj, idx) obj_is_hero(obj)) :: Mons.Object -> Nat -> Bool
+  let both = List.ifind<_>(tile, fun)
+  case both { 
+    none: {Mons.Object.void, 0u}
+    some: 
+      let hero = Pair.fst<_,_>(both.value)
+      let idx = Nat.to_u32(Pair.snd<_,_>(both.value))
+      {hero, idx}
+  }
+  
+  let names = []
+  letnames = [] // won't highlight
+let names = []
+  for mon in bag with names:
+    open mon
+    let name = Mons.Kind.get_name(mon.kin);
+    name & names
+
+def mon_kin = ...
+def mon_obj = ...
+  
+// ------ 
+if U32.eql(z, 0u) then 
+    let new_pos = Pos32.new(x,U32.add(y, 12u), 0u)
+else
+    let new_pos = 
+
+// -----
+    

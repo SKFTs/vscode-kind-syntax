@@ -1,0 +1,55 @@
+{
+	"name": "kind",
+	"displayName": "Kind Language",
+	"description": "Syntax highlighting for the Kind language",
+	"version": "0.1.2",
+	"publisher": "MaisaMilena",
+	"author": {
+		"name": "Maisa Milena"
+	},
+	"license": "SEE LICENSE",
+	"keywords": [
+		"formality",
+		"kind"
+	],
+	"icon": "images/kind-image.png",
+	"engines": {
+		"vscode": "^1.36.0"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "kind",
+				"aliases": [
+					"kind"
+				],
+				"extensions": [
+					".kind"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "kind",
+				"scopeName": "source.kind",
+				"path": "./syntaxes/kind.tmLanguage.plist"
+			}
+		]
+	},
+	"bugs": {
+		"url": "https://github.com/MaisaMilena/vscode-kind-syntax/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/MaisaMilena/vscode-kind-syntax.git"
+	},
+	"__metadata": {
+		"id": "307f747c-8551-4dba-93f5-2d593dd0f54b",
+		"publisherDisplayName": "MaisaMilena",
+		"publisherId": "MaisaMilena"
+	}
+}
