@@ -6,7 +6,7 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 - Modularize the grammar in multiple files;
-- Make highlighting togglable by category (Constructors, Operators, Types, Numeric, keywords, Punctuations);
+- Make highlighting togglable by category (Constructors, Operators, Types, Numeric, Keywords, Punctuations);
  
 ## [0.2.0] - 2022-04-25
 ### Added
