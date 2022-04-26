@@ -43,10 +43,10 @@
           <string>#type</string>
         </dict>
         <dict>
-          <key>match</key>
+        <key>match</key>
           <string>(\blet\s|\bdup\s|\bcpy\s|\bget\s)</string>
           <key>name</key>
-          <string>punctuation.definition.group.regexp.kind</string>
+          <string>storage.type.kind</string>
         </dict>
         <dict>
           <key>begin</key>
@@ -84,29 +84,89 @@
     <dict>
       <key>patterns</key>
       <array> 
+      <dict>
+          <key>match</key>
+          <string>(\bdup\s|\bcpy\s|\bget\s|\btype\s|\bMain\s|\bdef\s|\blet\s)</string>
+          <key>name</key>
+          <string>punctuation.definition.group.regexp.kind</string>
+        </dict>
         <dict>
           <key>match</key>
-          <string>(\btype\s|\bdef\b)</string>
+          <string>(\bopen\s|\bcase\s)</string>
+          <key>name</key>
+          <string>keyword.operator.negation.regexp.kind</string>
+        </dict>
+        <dict>
+          <key>match</key>
+          <string>(\bneg\b|\beql\b|\bor\b|\band\b|\bltn\b|\bgtn\b|\bxor\b)</string>
+          <key>name</key>
+          <string>storage.modifier.kind emphasis..kind</string>
+        </dict>
+        <dict>
+          <key>match</key>
+          <string>(\brefl\b|\bprint\b|\bapp\b|\bnone\b|\bsome\b|\bself\b|\bget\b|\bmodule\b|\bbind\b|\bpure\b|\bsuccess\b|\bfailure\b)</string>
+          <key>name</key>
+          <string>string.regexp.kind</string>
+        </dict>
+        <dict>
+          <key>match</key>
+          <string>(\bnew\b|\bnull\b|\bshow\b|\bvalue\b)</string>
           <key>name</key>
           <string>variable.parameter.kind</string>
         </dict>
         <dict>
           <key>match</key>
-          <string>(\bopen\b)</string>
+          <string>(\bquery\b|\bparam\b|\bargm\b)</string>
+          <key>name</key>
+          <string>entity.name.directive.restructuredtext.kind</string>
+        </dict>
+        <dict>
+          <key>match</key>
+          <string>(\berror\b)</string>
           <key>name</key>
           <string>punctuation.definition.group.assertion.regexp.kind</string>
         </dict>
         <dict>
           <key>match</key>
-          <string>(\bsucc\s|\brefl\b|\bcomm\b|\bbind\b|\bpure\b|\bnil\b|\bpred\b|\badd\b|\bcons\b|\bnew\b|\bhead\b|\btail\b|\bfst\b|\bsnd\b|\bsize\b|\bapply\b|\bkay\b|\bmap\b|\bsum\b|\bdefault\b|\b_\b|\bsome\b|\bnone\b|\bconcat\b|\brewrite\b|\sub\b|\bmul\b|\bdiv\b|\bltn\b|\blte\b|\beql\b|\bgte\b|\band\b|\bor\b|\bvalue\b|\bobj\b)</string>
+          <string>(\bpred\b|\blength\b|\bidx\b)</string>
           <key>name</key>
-          <string>storage.modifier.kind emphasis.kind</string>
+          <string>entity.name.directive.restructuredtext.kind</string>
         </dict>
         <dict>
           <key>match</key>
-          <string>(\bif\s|\bthen\b|\belse\b|\bcase\b|for\s|\sin\s|\with\s)</string>
+          <string>(\bdepth\b|\bhead\b|\btail\b)</string>
           <key>name</key>
-          <string>variable.other.constant.kind emphasis.kind</string>
+          <string>string.regexp.kind</string>
+        </dict>
+        <dict>
+          <key>match</key>
+          <string>(\bnil\b|\bzero\b)</string>
+          <key>name</key>
+          <string>storage.modifier.kind emphasis..kind</string>
+        </dict>
+        <dict>
+          <key>match</key>
+          <string>(\bsucc\b|\bcons\b)</string>
+          <key>name</key>
+          <string>entity.name.type.kind</string>
+        </dict>
+        <dict>
+          <key>match</key>
+          <string>(\bnum\b|\bexp\b|\bpos\b|\bvar\b|\blam\b|\bapp\b|\bindex\b|\bbody\b|\bfunc\b|\bmap\b)</string>
+          <key>name</key>
+          <string>entity.other.attribute-name.kind</string>
+        </dict>
+        <dict>
+          <key>match</key>
+          <string>(\btip\b|\btie\b|\blft\b|\brgt\b|\brows\b|\bcolumns\b|\bmul\b|\bfst\b|\bsnd\b|\btrd\b|\barr\b|\bval\b|\bsum\b|\bswap\b)</string>
+          <key>name</key>
+          <string>entity.name.type.kind</string>
+        </dict>
+        <dict>
+          <key>match</key>
+          <string>(\bif\s|\sthen\s|\belse\s|\bfor\s|\sin\s|\swith\s)</string>
+          <key>name</key>
+          <string>keyword.other.this.kind</string>
         </dict>
        </array>
     </dict>
@@ -158,15 +218,21 @@
       <array> 
         <dict>
           <key>match</key>
-          <string>(#|~|!|\$|\?|\+|%|&amp;|\*)</string>
+          <string>(#|~|\$|\?|\+|%|&amp;|\*)</string>
           <key>name</key>
-          <string>string.regexp.kind emphasis.kind</string>
+          <string>constant.other.kind</string>
+        </dict>
+        <dict>
+          <key>match</key>
+          <string>(!|\_)</string>
+          <key>name</key>
+          <string>punctuation.definition.group.assertion.regexp.kind</string>
         </dict>
         <dict>
           <key>match</key>
           <string>(=|:|=[\x{003e}]|=&gt;|\s-&gt;\s|~[\x{003e}]|,|\.|&lt;|&gt;|;)</string>
           <key>name</key>
-          <string>punctuation.definition.group.assertion.regexp.kind</string>
+          <string>storage.modifier.import.kind</string>
         </dict>
         <dict>
           <key>match</key>
@@ -182,51 +248,51 @@
       <array> 
         <dict>
           <key>match</key>
-          <string>(\bNat\b)</string>
-          <key>name</key>
-          <string>markup.inserted.kind</string>
-        </dict>
-        <dict>
-          <key>match</key>
-          <string>(\bU8\b|\bU16\b|\bU32\b|\bU64\b|\bU128\b|\bU256\b)</string>
-          <key>name</key>
-          <string>entity.other.attribute-name.kind</string>
-        </dict>
-        <dict>
-          <key>match</key>
-          <string>(\bF32\b|\bF64\b)</string>
-          <key>name</key>
-          <string>variable.parameter.kind</string>
-        </dict>
-        <dict>
-          <key>match</key>
-          <string>(\bList\b)</string>
-          <key>name</key>
-          <string>storage.modifier.import.kind</string>
-        </dict>
-        <dict>
-          <key>match</key>
-          <string>(\bPair\b)</string>
+          <string>(\bLambda\b|\bFin\b|\bPos32\b|\bV2\b|\bV3\b|\bTriple\b)</string>
           <key>name</key>
           <string>string.regexp.kind</string>
         </dict>
         <dict>
           <key>match</key>
-          <string>(\bArray\b)</string>
+          <string>(\bU8\b|\bU16\b|\bU32\b|\bU64\b|\bU128\b|\bU256\b|\bNat\b)</string>
           <key>name</key>
-          <string>entity.name.directive.restructuredtext.kind</string>
+          <string>entity.name.function.kind</string>
         </dict>
         <dict>
           <key>match</key>
-          <string>(\bI8\b|\bI16\b|\bI32\b|\bI64\b|\bI128\b|\bI256\b)</string>
+          <string>(\bI8\b|\bI16\b|\bI32\b|\bI64\b|\bI128\b|\bI256\b|\bInt\b|\bF32\b|\bF64\b)</string>
           <key>name</key>
-          <string>keyword.other.this.kind</string>
+          <string>support.constant.kind</string>
         </dict>
         <dict>
           <key>match</key>
-          <string>(\bBool\b)</string>
+          <string>(\bArray\b|\bList\b|\bPair\b|\bMatrix\b|\bVector\b|\bParser\b|\bState\b|\bReply\b|\bSet\b|\bSigma\b)</string>
+          <key>name</key>
+          <string>constant.regexp.kind</string>
+        </dict>
+        <dict>
+          <key>match</key>
+          <string>(\bApp\b|\bType\b|\bEmpty\b|\bEqual\b|\bFunction\b|\bFunctor\b|\bUnit\b|\bMap\b)</string>
           <key>name</key>
           <string>entity.name.type.class.kind</string>
+        </dict>
+        <dict>
+          <key>match</key>
+          <string>(\bMaybe\b|\bModule\b|\bDynamic\b|\bMonad\b|\bMonoid\b|\bResult\b)</string>
+          <key>name</key>
+          <string>punctuation.definition.group.regexp.kind</string>
+        </dict>
+        <dict>
+          <key>match</key>
+          <string>(\bBool\b|\bNot\b|\bOr\b|\bEither\b|\bAnd\b)</string>
+          <key>name</key>
+          <string>entity.name.function.kind</string>
+        </dict>
+        <dict>
+          <key>match</key>
+          <string>(\bChar\b|\bDate\b|\bWord\b|\bIO\b|\bString\b|\bBuffer32\b)</string>
+          <key>name</key>
+          <string>support.constant.kind</string>
         </dict>
         <dict>
           <key>match</key>
@@ -238,7 +304,7 @@
           <key>match</key>
           <string>(\bfalse\b)</string>
           <key>name</key>
-          <string>punctuation.definition.group.assertion.regexp.kind emphasis.kind</string>
+          <string>storage.modifier.kind emphasis.kind</string>
         </dict>
        </array>
     </dict>
