@@ -1,1 +1,12 @@
-.DS_Store
+node_modules
+*.vsix
+.vscodeignore
+.gitattributes
+linguagem.txt
+linguagem.json
+linguagem2.txt
+vsc-extension-quickstart.md
+package-lock.json
+kind.tmLanguagetest.json
+regex.simple copy.coffee
+linguagem2 copy.txt

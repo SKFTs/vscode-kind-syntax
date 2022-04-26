@@ -2,7 +2,11 @@
 type Mons.Sprite {
   new(x: U32, y: U32, z: U32, img: Image3D)
 }
-
+Nat,F32,I8,int,List,Pair,Bool true . false
+Nat , F32 , I8 , int , List , Pair , Bool value
+succ :
+zero:
+   . new.
 // A direction
 type Mons.Dir {
   right,
@@ -10,8 +14,10 @@ type Mons.Dir {
   left,
   down
 }
+dup Nat
 
-Mons.Object.set_bos(bos: List(Mons.Object), obj: Mons.Object): Mons.Object
+
+Mons.Object.set_bos(bos: List(Mons.Object), obj: Mons.Object): Mons.Object "fdodfsof" 
   open obj 
   Mons.Object.new(obj.kin, obj.dir, obj.pad, obj.ani, obj.dmg, obj.bag, 
     obj.mon, bos, obj.cap, obj.idl, obj.eff)
@@ -23,7 +29,7 @@ Mons.Map.get_hero(pos: Pos32, map: Mons.Map): Pair(Mons.Object, U32)
   let fun = ((obj, idx) obj_is_hero(obj)) :: Mons.Object -> Nat -> Bool
   let both = List.ifind<_>(tile, fun)
   case both { 
-    none: {Mons.Object.void, 0u}
+    none {Mons.Object.void, 0u}
     some: 
       let hero = Pair.fst<_,_>(both.value)
       let idx = Nat.to_u32(Pair.snd<_,_>(both.value))
@@ -42,10 +48,23 @@ def mon_kin = ...
 def mon_obj = ...
   
 // ------ 
-if U32.eql(z, 0u) then 
-    let new_pos = Pos32.new(x,U32.add(y, 12u), 0u)
+
+if U32.eql(z, 1u) then 
+    let new_pos = Pos32.new(x, U32.add(y, 12.8), 18u)
 else
     let new_pos = 
 
-// -----
-    
+// ----- 
+Lambda
+
+Nat (a: Nat, b: Nat): Nat
+///=======
+
+Nat   U32
+F32   let
+Bool  true
+11   I8
+Pair   Array  + = , . "ola" !_ 
+List    if
+def   succ
+open false

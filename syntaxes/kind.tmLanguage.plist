@@ -39,10 +39,14 @@
           <string>#numeric</string>
         </dict>
         <dict>
+          <key>include</key>
+          <string>#type</string>
+        </dict>
+        <dict>
           <key>match</key>
           <string>(\blet\s|\bdup\s|\bcpy\s|\bget\s)</string>
           <key>name</key>
-          <string>storage.type.kind</string>
+          <string>punctuation.definition.group.regexp.kind</string>
         </dict>
         <dict>
           <key>begin</key>
@@ -82,21 +86,27 @@
       <array> 
         <dict>
           <key>match</key>
-          <string>(\btype\s|\blet\b|\bdef\b)</string>
+          <string>(\btype\s|\bdef\b)</string>
           <key>name</key>
-          <string>keyword.other.kind</string>
+          <string>variable.parameter.kind</string>
         </dict>
         <dict>
           <key>match</key>
           <string>(\bopen\b)</string>
           <key>name</key>
-          <string>keyword.control.auxiliar.kind</string>
+          <string>punctuation.definition.group.assertion.regexp.kind</string>
+        </dict>
+        <dict>
+          <key>match</key>
+          <string>(\bsucc\s|\brefl\b|\bcomm\b|\bbind\b|\bpure\b|\bnil\b|\bpred\b|\badd\b|\bcons\b|\bnew\b|\bhead\b|\btail\b|\bfst\b|\bsnd\b|\bsize\b|\bapply\b|\bkay\b|\bmap\b|\bsum\b|\bdefault\b|\b_\b|\bsome\b|\bnone\b|\bconcat\b|\brewrite\b|\sub\b|\bmul\b|\bdiv\b|\bltn\b|\blte\b|\beql\b|\bgte\b|\band\b|\bor\b|\bvalue\b|\bobj\b)</string>
+          <key>name</key>
+          <string>storage.modifier.kind emphasis.kind</string>
         </dict>
         <dict>
           <key>match</key>
           <string>(\bif\s|\bthen\b|\belse\b|\bcase\b|for\s|\sin\s|\with\s)</string>
           <key>name</key>
-          <string>keyword.conditional.kind</string>
+          <string>variable.other.constant.kind emphasis.kind</string>
         </dict>
        </array>
     </dict>
@@ -150,19 +160,85 @@
           <key>match</key>
           <string>(#|~|!|\$|\?|\+|%|&amp;|\*)</string>
           <key>name</key>
-          <string>punctuation.definition.variable.kind</string>
+          <string>string.regexp.kind emphasis.kind</string>
         </dict>
         <dict>
           <key>match</key>
-          <string>(=|:|=[\x{003e}]|=&gt;|\s-&gt;\s|~[\x{003e}]|,|&lt;|&gt;|;)</string>
+          <string>(=|:|=[\x{003e}]|=&gt;|\s-&gt;\s|~[\x{003e}]|,|\.|&lt;|&gt;|;)</string>
           <key>name</key>
-          <string>punctuation.kind</string>
+          <string>punctuation.definition.group.assertion.regexp.kind</string>
         </dict>
         <dict>
           <key>match</key>
           <string>(\[|\]|\{|\}|\(|\)|\|)</string>
           <key>name</key>
-          <string>punctuation.kind</string>
+          <string>constant.language.kind</string>
+        </dict>
+       </array>
+    </dict>
+    <key>type</key>
+    <dict>
+      <key>patterns</key>
+      <array> 
+        <dict>
+          <key>match</key>
+          <string>(\bNat\b)</string>
+          <key>name</key>
+          <string>markup.inserted.kind</string>
+        </dict>
+        <dict>
+          <key>match</key>
+          <string>(\bU8\b|\bU16\b|\bU32\b|\bU64\b|\bU128\b|\bU256\b)</string>
+          <key>name</key>
+          <string>entity.other.attribute-name.kind</string>
+        </dict>
+        <dict>
+          <key>match</key>
+          <string>(\bF32\b|\bF64\b)</string>
+          <key>name</key>
+          <string>variable.parameter.kind</string>
+        </dict>
+        <dict>
+          <key>match</key>
+          <string>(\bList\b)</string>
+          <key>name</key>
+          <string>storage.modifier.import.kind</string>
+        </dict>
+        <dict>
+          <key>match</key>
+          <string>(\bPair\b)</string>
+          <key>name</key>
+          <string>string.regexp.kind</string>
+        </dict>
+        <dict>
+          <key>match</key>
+          <string>(\bArray\b)</string>
+          <key>name</key>
+          <string>entity.name.directive.restructuredtext.kind</string>
+        </dict>
+        <dict>
+          <key>match</key>
+          <string>(\bI8\b|\bI16\b|\bI32\b|\bI64\b|\bI128\b|\bI256\b)</string>
+          <key>name</key>
+          <string>keyword.other.this.kind</string>
+        </dict>
+        <dict>
+          <key>match</key>
+          <string>(\bBool\b)</string>
+          <key>name</key>
+          <string>entity.name.type.class.kind</string>
+        </dict>
+        <dict>
+          <key>match</key>
+          <string>(\btrue\b)</string>
+          <key>name</key>
+          <string>entity.name.type.kind</string>
+        </dict>
+        <dict>
+          <key>match</key>
+          <string>(\bfalse\b)</string>
+          <key>name</key>
+          <string>punctuation.definition.group.assertion.regexp.kind emphasis.kind</string>
         </dict>
        </array>
     </dict>
