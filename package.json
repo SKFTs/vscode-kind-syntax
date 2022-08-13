@@ -2,7 +2,7 @@
     "name": "kind-syntax",
     "displayName": "Kind Syntax",
     "description": "A minimal, efficient and practical programming language",
-    "version": "0.2.1",
+    "version": "0.2.2",
     "license": "SEE LICENSE",
     "engines": {
         "vscode": "^1.62.0"
@@ -15,10 +15,12 @@
             {
                 "id": "kind",
                 "aliases": [
-                    "kind"
+                    "kind",
+                    ".kind2"
                 ],
                 "extensions": [
-                    ".kind"
+                    ".kind",
+                    ".kind2"
                 ],
                 "configuration": "./language-configuration.json"
             }

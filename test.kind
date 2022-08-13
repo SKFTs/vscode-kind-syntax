@@ -1,8 +1,8 @@
 // A Mons sprite
-type Mons.Sprite {
+type  Mons.Sprite {
   new(x: U32, y: U32, z: U32, img: Image3D)
 }
-Nat,F32,I8,Int,List,Pair,Bool,true.false
+   Nat ,F32,I8,Int,List,Pair,Bool,true.false
 Nat , F32 , I8 , Int , List , Pair , Bool value
 succ:
 zero:
@@ -12,7 +12,8 @@ type Mons.Dir {
   right,
   up,
   left,
-  down num.value Nat.
+  down num.value Nat  
+dup 
 }
 Nat.
 App.
@@ -67,4 +68,3 @@ Bool  true
 Pair   Array  + = , . "ola" !_ 
 List    if
 def   succ
-open false

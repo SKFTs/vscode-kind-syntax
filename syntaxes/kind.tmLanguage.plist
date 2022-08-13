@@ -98,7 +98,7 @@
         </dict>
         <dict>
           <key>match</key>
-          <string>((\bneg\b|\beql\b|\bor\b|\band\b|\bltn\b|\bgtn\b|\bxor\b)</string>
+          <string>(\bneg\b|\beql\b|\bor\b|\band\b|\bltn\b|\bgtn\b|\bxor\b)</string>
           <key>name</key>
           <string>storage.modifier.kind emphasis..kind</string>
         </dict>
