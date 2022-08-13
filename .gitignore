@@ -10,3 +10,4 @@ package-lock.json
 kind.tmLanguagetest.json
 regex.simple copy.coffee
 linguagem2 copy.txt
+.gitignore
